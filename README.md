@@ -13,6 +13,8 @@ npm start        # open Remotion Studio in browser
 
 ### AduClip
 
+▶ [Watch AduClip](https://github.com/stevevance/remotion_videos/blob/main/out/adu-clip3.mp4)
+
 A 47-second vertical (1080×1920) social clip excerpted from the *Straight Up Chicago Investor* podcast, episode featuring Alderman Bennett Lawson of Chicago's 44th Ward.
 
 Lawson discusses ADUs (accessory dwelling units) in Lakeview — making the case for gentle density, noting that coach houses and basement units are common in the neighborhood ("some are not so legal"), and pointing out that the new citywide ADU ordinance saw nearly 188 applications in its first two days. He closes by explaining how the new ordinance removed parking requirements that previously blocked legalization of many units.
@@ -27,6 +29,8 @@ npx remotion render src/index.jsx AduClip out/adu-clip.mp4
 ---
 
 ### PeopleOverParking
+
+▶ [Watch PeopleOverParking](https://github.com/stevevance/remotion_videos/blob/main/out/people-over-parking.mp4)
 
 An 18-second landscape (1080×720, 3:2) explainer about the Illinois People Over Parking Act (Public Act 104-0457), which takes effect June 1, 2026.
 
