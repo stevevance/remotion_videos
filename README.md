@@ -15,7 +15,7 @@ npm start        # open Remotion Studio in browser
 
 A 47-second vertical (1080×1920) social clip excerpted from the *Straight Up Chicago Investor* podcast, episode featuring Alderman Bennett Lawson of Chicago's 44th Ward.
 
-Lawson discusses ADUs (accessory dwelling units) in Lakeview — making the case for gentle density, noting that coach houses and basement units are common in the neighborhood ("some are not so legal"), and pointing out that the new citywide ADU ordinance saw nearly 188 applications in its first two days versus only 250 units built over the entire pilot program. He closes by explaining how the new ordinance removed parking requirements that previously blocked legalization of many units.
+Lawson discusses ADUs (accessory dwelling units) in Lakeview — making the case for gentle density, noting that coach houses and basement units are common in the neighborhood ("some are not so legal"), and pointing out that the new citywide ADU ordinance saw nearly 188 applications in its first two days. He closes by explaining how the new ordinance removed parking requirements that previously blocked legalization of many units.
 
 Audio is played at 1.1× speed. Captions are synced from the diarized transcript.
 
