@@ -1,6 +1,7 @@
 import { Composition } from 'remotion';
 import { AduClip } from './AduClip';
 import { PeopleOverParking } from './PeopleOverParking';
+import { BuildPlanTestimony } from './BuildPlanTestimony';
 
 export function RemotionRoot() {
   return (
@@ -16,10 +17,18 @@ export function RemotionRoot() {
       <Composition
         id="PeopleOverParking"
         component={PeopleOverParking}
-        durationInFrames={540}  // 18 seconds at 30fps
+        durationInFrames={540}
         fps={30}
         width={1080}
         height={720}
+      />
+      <Composition
+        id="BuildPlanTestimony"
+        component={BuildPlanTestimony}
+        durationInFrames={540}
+        fps={30}
+        width={1080}
+        height={1920}
       />
     </>
   );
