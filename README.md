@@ -64,3 +64,25 @@ The video covers:
 ```bash
 npx remotion render BuildPlanTestimony out/build-plan-testimony.mp4
 ```
+
+---
+
+### WalkSlideshow
+
+▶ [Watch WalkSlideshow](https://github.com/stevevance/remotion_videos/blob/main/out/walk-slideshow.mp4)
+
+A 25-second landscape (1080×720, 3:2) slideshow of 5 recent Strava walk routes rendered on Mapbox Streets tiles. Each slide fades in over 5 seconds showing the GPS route trace with the walk name and date overlaid on a gradient.
+
+Walks included:
+- River North to home (May 9, 2026)
+- Uptown to Lakeview to home (May 9, 2026)
+- Pilsen to home (May 6, 2026)
+- Walk in The Hague (Sep 10, 2024)
+- Openluchtmuseum, Arnhem (Sep 9, 2024)
+
+Route maps are pre-rendered PNGs via the `staticmap` Python library with Mapbox Streets tiles. Polylines are decoded from the Strava API using the `polyline` library.
+
+**Render:**
+```bash
+npx remotion render src/index.jsx WalkSlideshow out/walk-slideshow.mp4
+```

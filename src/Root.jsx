@@ -2,6 +2,7 @@ import { Composition } from 'remotion';
 import { AduClip } from './AduClip';
 import { PeopleOverParking } from './PeopleOverParking';
 import { BuildPlanTestimony } from './BuildPlanTestimony';
+import { WalkSlideshow } from './WalkSlideshow';
 
 export function RemotionRoot() {
   return (
@@ -29,6 +30,14 @@ export function RemotionRoot() {
         fps={30}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="WalkSlideshow"
+        component={WalkSlideshow}
+        durationInFrames={750}
+        fps={30}
+        width={1080}
+        height={720}
       />
     </>
   );
