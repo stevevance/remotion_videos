@@ -34,7 +34,7 @@ export function RemotionRoot() {
       <Composition
         id="WalkSlideshow"
         component={WalkSlideshow}
-        durationInFrames={750}
+        durationInFrames={450}
         fps={30}
         width={1080}
         height={720}
