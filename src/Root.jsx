@@ -25,7 +25,7 @@ export function RemotionRoot() {
       <Composition
         id="BuildPlanTestimony"
         component={BuildPlanTestimony}
-        durationInFrames={540}
+        durationInFrames={510}
         fps={30}
         width={1080}
         height={1920}

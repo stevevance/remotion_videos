@@ -44,3 +44,23 @@ The video covers:
 ```bash
 npx remotion render src/index.jsx PeopleOverParking out/people-over-parking.mp4
 ```
+
+---
+
+### BuildPlanTestimony
+
+▶ [Watch BuildPlanTestimony](https://github.com/stevevance/remotion_videos/blob/main/out/build-plan-testimony.mp4)
+
+A 17-second vertical (1080×1920) social reel in support of the Illinois BUILD Plan (HB5626, sponsored by Rep. Buckner), based on Steven Vance's written testimony to the Illinois House executive committee on May 6, 2026.
+
+The video covers:
+- Illinois is roughly 142,000 homes short (source: Illinois Economic Policy Institute)
+- Verbatim testimony quote about a 3-bedroom Evanston apartment listed at $2,900/month with a 40% move-in fee — and why that fee will keep rising with rent
+- Two verbatim quotes on why state action is needed: housing markets are regional while zoning is local, and the legislature's right and responsibility to set a floor when local limitations produce statewide harm
+- What the BUILD Plan includes: $250M capital investment, middle housing, ADUs, and single-stair building reform
+- Call to action directing viewers to buildforil.org
+
+**Render:**
+```bash
+npx remotion render BuildPlanTestimony out/build-plan-testimony.mp4
+```
