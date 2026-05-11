@@ -30,9 +30,9 @@ npx remotion render src/index.jsx AduClip out/adu-clip.mp4
 
 ### PeopleOverParking
 
-▶ [Watch PeopleOverParking](https://github.com/stevevance/remotion_videos/blob/main/out/people-over-parking.mp4)
+▶ [Watch PeopleOverParking](https://github.com/stevevance/remotion_videos/blob/main/out/people-over-parking-v2.mp4)
 
-An 18-second landscape (1080×720, 3:2) explainer about the Illinois People Over Parking Act (Public Act 104-0457), which takes effect June 1, 2026.
+A 26-second landscape (1080×720, 3:2) explainer about the Illinois People Over Parking Act (Public Act 104-0457), which takes effect June 1, 2026.
 
 The video covers:
 - What the law does: Illinois municipalities can no longer require parking in areas near transit
@@ -40,9 +40,11 @@ The video covers:
 - Which properties are eligible: within ½ mile of a public transportation hub (rail station or high-frequency bus intersection), or within ⅛ mile of a public transportation corridor (frequent bus route)
 - Why it matters: more housing near transit, lower construction costs, walkable streets, less land paved for parking
 
+**Music:** "tokyoStreet" by [airtone](http://ccmixter.org/files/airtone/28285) (ccMixter, 2016). Licensed under [Creative Commons Sampling+ 1.0](http://creativecommons.org/licenses/sampling+/1.0/).
+
 **Render:**
 ```bash
-npx remotion render src/index.jsx PeopleOverParking out/people-over-parking.mp4
+npm run render:pop
 ```
 
 ---
