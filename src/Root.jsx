@@ -18,10 +18,12 @@ export function RemotionRoot() {
       <Composition
         id="PeopleOverParking"
         component={PeopleOverParking}
-        durationInFrames={540}
+        durationInFrames={792}
         fps={30}
         width={1080}
         height={720}
+        defaultProps={{}}
+        defaultFrame={80}
       />
       <Composition
         id="BuildPlanTestimony"

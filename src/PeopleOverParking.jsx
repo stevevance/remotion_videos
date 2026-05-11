@@ -1,4 +1,4 @@
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, spring, Sequence } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, spring, Sequence, Audio, staticFile } from 'remotion';
 
 const BLUE = '#003f88';
 const RED = '#e63946';
@@ -24,9 +24,6 @@ function SlideIn({ frame, fps, delay, children }) {
 
 // Section 1 — 90 frames (3s)
 function TitleSection({ frame, fps }) {
-  const titleProgress = useSpringIn(frame, fps, 10, 80);
-  const subtitleProgress = useSpringIn(frame, fps, 22, 70);
-
   // Car drops off screen between frames 0–34
   const carOpacity = interpolate(frame, [0, 10, 22, 34], [0, 1, 1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const carY = interpolate(frame, [18, 36], [0, 180], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
@@ -50,10 +47,10 @@ function TitleSection({ frame, fps }) {
         </div>
       </div>
 
-      <div style={{ opacity: titleProgress, transform: `translateY(${interpolate(titleProgress, [0,1],[40,0])}px)`, fontFamily: "'Arial Black', sans-serif", fontSize: 90, fontWeight: 900, color: GREEN, textAlign: 'center', lineHeight: 1, textTransform: 'uppercase', letterSpacing: -1 }}>PEOPLE</div>
-      <div style={{ opacity: titleProgress, fontFamily: 'Arial, sans-serif', fontSize: 36, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: 8, textTransform: 'uppercase', marginTop: 4, marginBottom: 4 }}>OVER</div>
-      <div style={{ opacity: titleProgress, transform: `translateY(${interpolate(titleProgress, [0,1],[-40,0])}px)`, fontFamily: "'Arial Black', sans-serif", fontSize: 90, fontWeight: 900, color: RED, textAlign: 'center', lineHeight: 1, textTransform: 'uppercase', letterSpacing: -1 }}>PARKING</div>
-      <div style={{ opacity: subtitleProgress, transform: `translateY(${interpolate(subtitleProgress, [0,1],[20,0])}px)`, marginTop: 40, fontFamily: 'Arial, sans-serif', fontSize: 28, fontWeight: 600, color: 'rgba(255,255,255,0.55)', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center' }}>Illinois Law</div>
+      <div style={{ fontFamily: "'Arial Black', sans-serif", fontSize: 90, fontWeight: 900, color: GREEN, textAlign: 'center', lineHeight: 1, textTransform: 'uppercase', letterSpacing: -1 }}>PEOPLE</div>
+      <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 36, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: 8, textTransform: 'uppercase', marginTop: 4, marginBottom: 4 }}>OVER</div>
+      <div style={{ fontFamily: "'Arial Black', sans-serif", fontSize: 90, fontWeight: 900, color: RED, textAlign: 'center', lineHeight: 1, textTransform: 'uppercase', letterSpacing: -1 }}>PARKING</div>
+      <div style={{ marginTop: 40, fontFamily: 'Arial, sans-serif', fontSize: 28, fontWeight: 600, color: 'rgba(255,255,255,0.55)', letterSpacing: 3, textTransform: 'uppercase', textAlign: 'center' }}>Illinois Law</div>
     </AbsoluteFill>
   );
 }
@@ -171,25 +168,33 @@ function EndCard({ frame, fps }) {
   );
 }
 
-// Total: 90 + 72 + 90 + 90 + 108 + 90 = 540 frames = 18 seconds
+// Total: 120 + 102 + 120 + 120 + 138 + 120 = 720 frames = 24s (before 1.1x slowdown = 792 frames = 26.4s)
 const SECTIONS = [
-  { from: 0,   duration: 90,  Component: TitleSection },
-  { from: 90,  duration: 72,  Component: DateSection },
-  { from: 162, duration: 90,  Component: WhatIsItSection },
-  { from: 252, duration: 90,  Component: EligibilitySection },
-  { from: 342, duration: 108, Component: BenefitsSection },
-  { from: 450, duration: 90,  Component: EndCard },
+  { from: 0,   duration: 120, Component: TitleSection },
+  { from: 120, duration: 102, Component: DateSection },
+  { from: 222, duration: 120, Component: WhatIsItSection },
+  { from: 342, duration: 120, Component: EligibilitySection },
+  { from: 462, duration: 138, Component: BenefitsSection },
+  { from: 600, duration: 120, Component: EndCard },
 ];
+
+const SLOW = 1.1; // 10% slower — stretch all timings by this factor
 
 export function PeopleOverParking() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const slowFrame = frame / SLOW;
 
   return (
     <AbsoluteFill style={{ background: DARK }}>
+      <Audio
+        src={staticFile('airtone_-_tokyoStreet.mp3')}
+        startFrom={17 * 30}
+        volume={(f) => interpolate(f, [732, 792], [0.3, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })}
+      />
       {SECTIONS.map(({ from, duration, Component }) => (
-        <Sequence key={from} from={from} durationInFrames={duration}>
-          <Component frame={frame - from} fps={fps} />
+        <Sequence key={from} from={Math.round(from * SLOW)} durationInFrames={Math.round(duration * SLOW)}>
+          <Component frame={slowFrame - from} fps={fps} />
         </Sequence>
       ))}
     </AbsoluteFill>
