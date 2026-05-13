@@ -3,6 +3,7 @@ import { AduClip } from './AduClip';
 import { PeopleOverParking } from './PeopleOverParking';
 import { BuildPlanTestimony } from './BuildPlanTestimony';
 import { WalkSlideshow } from './WalkSlideshow';
+import { PopActCities } from './PopActCities';
 
 export function RemotionRoot() {
   return (
@@ -40,6 +41,15 @@ export function RemotionRoot() {
         fps={30}
         width={1080}
         height={720}
+      />
+      <Composition
+        id="PopActCities"
+        component={PopActCities}
+        durationInFrames={1290}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultFrame={90}
       />
     </>
   );

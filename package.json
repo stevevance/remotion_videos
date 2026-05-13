@@ -6,7 +6,8 @@
   "scripts": {
     "start": "remotion studio",
     "render": "remotion render AduClip out/adu-clip3.mp4",
-    "render:pop": "remotion render PeopleOverParking out/people-over-parking-v2.mp4 --image-format=png --crf=1"
+    "render:pop": "remotion render PeopleOverParking out/people-over-parking-v2.mp4 --image-format=png --crf=1",
+    "render:popcities": "remotion render PopActCities out/pop-act-cities.mp4 --image-format=png --crf=1"
   },
   "keywords": [],
   "author": "",
